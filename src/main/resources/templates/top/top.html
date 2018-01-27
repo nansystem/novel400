@@ -8,6 +8,7 @@
 
 <ul class="novel-list">
     <li class="novel-list__item" th:each="novel: ${novels.list()}">
+        <p th:text="${novel.title()}"></p>
         <p th:text="${novel.text()}"></p>
     </li>
 </ul>

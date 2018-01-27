@@ -4,12 +4,14 @@
 
     <resultMap id="novel" type="xyz.novel400.domain.novel.Novel">
         <id column="id" property="novelIdentifier.value" />
-        <result column="text" property="novelText.value"/>
+        <result column="title" property="novelTitle.value" />
+        <result column="text" property="novelText.value" />
     </resultMap>
 
     <select id="listAll" resultMap="novel">
         SELECT
         id
+        ,title
         ,text
         FROM
         novel400.novel
