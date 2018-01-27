@@ -22,6 +22,9 @@ repositories {
 	mavenCentral()
 }
 
+ext['thymeleaf.version'] = '3.0.9.RELEASE'
+ext['thymeleaf-layout-dialect.version'] = '2.2.2'
+
 bootRun {
 	addResources = true
 	if (project.hasProperty('args')) {
@@ -34,7 +37,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
-	runtime('mysql:mysql-connector-java')
+	runtime('mysql:mysql-connector-java:5.1.40')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
 }

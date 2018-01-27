@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.novel400.infrastructure.datasource.novel.NovelListMapper">
+
+    <resultMap id="novel" type="xyz.novel400.domain.novel.Novel">
+        <id column="id" property="novelIdentifier.value" />
+        <result column="text" property="novelText.value"/>
+    </resultMap>
+
+    <select id="listAll" resultMap="novel">
+        SELECT
+        id
+        ,text
+        FROM
+        novel400.novel
+    </select>
+</mapper>
