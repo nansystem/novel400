@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="xyz.novel400.infrastructure.datasource.novel.NovelListMapper">
+<mapper namespace="xyz.novel400.infrastructure.datasource.novel.NovelQueryMapper">
 
     <resultMap id="novel" type="xyz.novel400.domain.novel.Novel">
         <id column="id" property="novelIdentifier.value" />
@@ -15,5 +15,16 @@
         ,text
         FROM
         novel400.novel
+    </select>
+
+    <select id="findBy" resultMap="novel">
+        SELECT
+        id
+        ,title
+        ,text
+        FROM
+        novel400.novel
+        WHERE
+        novel.id = #{novelIdentifier.value}
     </select>
 </mapper>

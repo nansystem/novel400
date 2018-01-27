@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="xyz.novel400.infrastructure.datasource.novel.NovelWriteMapper">
+
+    <insert id="write" useGeneratedKeys="true" keyProperty="novel.novelIdentifier.value">
+    INSERT INTO novel(title, text)
+    VALUES(#{novel.novelTitle.value}, #{novel.novelText.value})
+    </insert>
+
+</mapper>

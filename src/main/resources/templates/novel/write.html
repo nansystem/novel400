@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>小説を執筆する</h1>
+<p th:if="${message}" th:text="${message}"></p>
+<form th:action="@{/novel/write}" method="post" th:object="${novelWriteForm}">
+    <label for="title">タイトル</label>
+    <input id="title" type="text" maxlength="50" max="50" th:field="*{title}">
+    <label for="novel">小説</label>
+    <textarea id="novel" th:field="*{text}"></textarea>
+    <button type="submit">投稿する</button>
+</form>
+</body>
+</html>

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ja" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+
+<header>
+    <a th:href="@{/novel/write}">小説を書く</a>
+</header>
 
 <ul class="novel-list">
     <li class="novel-list__item" th:each="novel: ${novels.list()}">
